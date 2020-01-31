@@ -1,17 +1,15 @@
 s=input()
-h=s[0:2]
-m=s[3:5]
-se=s[6:8]
-f=s[8:]
-if f=="PM":
-    if int(h)==12:
-        print(h+":"+m+":"+se)
+period=s[-2:]
+if period=="AM":
+    if int(s[0:2])==12:
+        print("00"+s[2:-2])
     else:
-        g=str((int(h)+12))
-        print(g+":"+m+":"+se)
+        print(s[0:-2])
 else:
+    h=s[0:2]
     if int(h)==12:
-        print("00"+":"+m+":"+se)
+        print(s[0:-2])
     else:
-        print(h+":"+m+":"+se)
+        h=str((int(h)+12))
+        print(h+s[2:-2])            
 
